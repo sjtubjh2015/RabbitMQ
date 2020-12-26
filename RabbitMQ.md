@@ -10,7 +10,7 @@ A *queue* is the name for a post box which lives inside RabbitMQ. Although messa
 
 ### Sending
 
-connect to RabbitMQ server:
+Connect to RabbitMQ server:
 
 ```go
 conn, err := amqp.Dial("amqp://guest:guest@localhost:5672/")
@@ -457,13 +457,6 @@ It's easiest to explain this in an example:
 ![img](https://www.rabbitmq.com/img/tutorials/python-five.png)
 
 In this example, we're going to send messages which all describe animals. The messages will be sent with a routing key that consists of three words (two dots). The first word in the routing key will describe speed, second a colour and third a species: "<speed>.<colour>.<species>".
-
-We created three bindings: Q1 is bound with binding key "*.orange.*" and Q2 with "*.*.rabbit" and "lazy.#".
-
-These bindings can be summarised as:
-
-- Q1 is interested in all the orange animals.
-- Q2 wants to hear everything about rabbits, and everything about lazy animals.
 
 We created three bindings: Q1 is bound with binding key "*.orange.*" and Q2 with "*.*.rabbit" and "lazy.#".
 
